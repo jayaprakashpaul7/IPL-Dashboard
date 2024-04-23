@@ -15,8 +15,30 @@ const LatestMatch = props => {
     secondInnings,
     matchStatus,
   } = latestMatchDetails
-  console.log(manOfTheMatch)
-  return <div>{umpires}</div>
+  return (
+    <div className="latest-section">
+      <p>Latest matches</p>
+      <div className="latest-match-card">
+        <div className="left-text">
+          <h1 className="competing-team-title">{competingTeam}</h1>
+          <p>{date}</p>
+          <p>{venue}</p>
+          <p>{result}</p>
+        </div>
+        <img src={competingTeamLogo} className="logo" alt="logo" />
+        <div className="right-text">
+          <h1>First Innings</h1>
+          <p>{firstInnings}</p>
+          <h1>second innings</h1>
+          <p>{secondInnings}</p>
+          <h1>Man of the Match</h1>
+          <p>{manOfTheMatch}</p>
+          <h1>Umpires</h1>
+          <p>{umpires}</p>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default LatestMatch

@@ -1,10 +1,12 @@
 // Write your code here
 import './index.css'
 import {Component} from 'react'
+import Loader from 'react-loader-spinner'
 import LatestMatch from '../LatestMatch'
+import MatchCard from '../MatchCard'
 
 class TeamMatches extends Component {
-  state = {teamMatchesData: {}}
+  state = {teamMatchesData: {}, isLoad: true}
 
   componentDidMount() {
     this.getMatchesData()
@@ -34,24 +36,31 @@ class TeamMatches extends Component {
       teamBannerUrl: data.team_banner_url,
 
       latestMatchDetails: this.getFormatedData(data.latest_match_details),
+
       recentMatches: data.recent_matches.map(each =>
         this.getFormatedData(each),
       ),
     }
-    this.setState({teamMatchesData: updatedData})
+    this.setState({teamMatchesData: updatedData, isLoad: false})
   }
 
   render() {
-    const {teamMatchesData} = this.state
+    const {teamMatchesData, isLoad} = this.state
     const {teamBannerUrl, latestMatchDetails, recentMatches} = teamMatchesData
 
     return (
-      <div>
-        <img src={teamBannerUrl} alt="" className="team-img" />
-
-        <div>
-          <LatestMatch latestMatchDetails={latestMatchDetails} />
-        </div>
+      <div className="bg-2">
+        {isLoad ? (
+          <div data-testid="loader">
+            <Loader type="Oval" height={50} width={50} color="#dd1acd" />
+          </div>
+        ) : (
+          <>
+            <img src={teamBannerUrl} alt="ipl logo" className="team-img" />
+            <LatestMatch latestMatchDetails={latestMatchDetails} />
+            {recentMatches && <MatchCard recentMatchDetails={recentMatches} />}
+          </>
+        )}
       </div>
     )
   }

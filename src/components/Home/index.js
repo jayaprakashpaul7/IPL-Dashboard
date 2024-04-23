@@ -28,10 +28,21 @@ class Home extends Component {
     const {teamData, isLoading} = this.state
     return (
       <div className="home-bg">
-        <h1>IPL Dashboard</h1>
+        <div>
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/ipl-logo-img.png"
+            alt="ipl logo"
+          />
+          <h1>IPL Dashboard</h1>
+        </div>
+
         <ul>
           {isLoading ? (
-            <Loader type="Oval" color="#ffffffff" height={50} width={50} />
+            <div
+              /* eslint-disable-next-line react/no-unknown-property */ testid="loader"
+            >
+              <Loader type="Oval" color="#ffffffff" height={50} width={50} />
+            </div>
           ) : (
             teamData.map(eachItem => (
               <TeamCard teamDetails={eachItem} key={eachItem.id} />

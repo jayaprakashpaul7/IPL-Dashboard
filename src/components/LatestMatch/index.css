@@ -1,1 +1,37 @@
 /* Write your CSS here */
+.latest-section {
+  padding: 12px;
+  color: white;
+  width: 50%;
+  font-family: 'Roboto';
+}
+.latest-match-card {
+  background-color: #1e293b;
+  padding: 20px;
+
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.competing-team-title {
+  font-size: 20px;
+}
+.right-text {
+  text-align: right;
+  color: white;
+}
+
+h1 {
+  font-family: 'roboto';
+  font-size: 12px;
+}
+p {
+  font-size: 12px;
+  font-family: 'Roboto';
+}
+.logo {
+  height: 100px;
+  width: 150px;
+}

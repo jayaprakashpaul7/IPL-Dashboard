@@ -3,3 +3,11 @@
   width: 100%;
   max-width: 50%;
 }
+.bg-2 {
+  background-color: #a4261d;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
