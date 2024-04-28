@@ -58,7 +58,11 @@ class TeamMatches extends Component {
           <>
             <img src={teamBannerUrl} alt="team banner" className="team-img" />
             <LatestMatch latestMatchDetails={latestMatchDetails} />
-            {recentMatches && <MatchCard recentMatchDetails={recentMatches} />}
+            <ul>
+              {recentMatches && (
+                <MatchCard recentMatchDetails={recentMatches} />
+              )}
+            </ul>
           </>
         )}
       </div>
