@@ -51,12 +51,12 @@ class TeamMatches extends Component {
     return (
       <div className="bg-2">
         {isLoad ? (
-          <div data-testid="loader">
+          <div testid="loader">
             <Loader type="Oval" height={50} width={50} color="#dd1acd" />
           </div>
         ) : (
           <>
-            <img src={teamBannerUrl} alt="ipl logo" className="team-img" />
+            <img src={teamBannerUrl} alt="team banner" className="team-img" />
             <LatestMatch latestMatchDetails={latestMatchDetails} />
             {recentMatches && <MatchCard recentMatchDetails={recentMatches} />}
           </>

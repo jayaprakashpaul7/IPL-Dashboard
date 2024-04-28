@@ -38,9 +38,7 @@ class Home extends Component {
 
         <ul>
           {isLoading ? (
-            <div
-              /* eslint-disable-next-line react/no-unknown-property */ testid="loader"
-            >
+            <div testid="loader">
               <Loader type="Oval" color="#ffffffff" height={50} width={50} />
             </div>
           ) : (
